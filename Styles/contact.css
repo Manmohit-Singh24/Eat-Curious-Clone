@@ -1,0 +1,165 @@
+
+/* <=================== 'Let's chat text' Section ===================> */
+
+.contact-curvedText {
+    height: 80vh;
+    text-align: center;
+    margin-top: 12rem;
+    svg{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+/* <!------------------- **** 'Let's chat text' **** -------------------!> */
+hr {
+    opacity: 0.4;
+}
+
+/* <=================== 'Contact-Form' Section ===================> */
+
+.section-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30rem;
+    justify-content: space-between;
+
+    .left-text {
+        color: var(--white);
+
+        h1 {
+            font-size: 8rem;
+            width: min-content;
+        }
+        p{
+            padding-block: 2rem;
+        }
+        .disclaim{
+            background-color: rgba(255, 255, 255, 0.11) ;
+            border-radius: 1rem;
+            padding: 2rem ;
+            color: rgba(255, 246, 246, 0.45);
+            position: relative;
+            left: -2rem;
+            font-style: italic;
+            h2{
+                font-size: 3.6rem ;
+                font-family: var(--sub-heading-font) , sans-serif;
+            }
+        }
+
+    }
+
+}
+
+.section-form form {
+    display: flex;
+    flex-direction: column;
+
+    * {
+        margin-top: 1rem;
+    }
+
+    .input-div {
+        position: relative;
+
+        & input, textarea {
+            color: var(--white);
+            background-color: rgba(255, 255, 255, 0.11);
+        }
+    }
+
+    button {
+        background-color: var(--pink);
+    }
+}
+
+/*TODO create a dropdown in i m interested */
+
+/* <!------------------- **** 'Contact-Form' **** -------------------!> */
+
+/* <=================== ' FAQ' Section ===================> */
+
+.section-QA {
+    .QA-div {
+        padding-block: 5rem;
+        border-bottom: 0.2rem solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+
+        &:first-child { /*First QA element in section-QA*/
+            border-top: 0.2rem solid rgba(255, 255, 255, 0.1);
+        }
+
+        & .Ques {
+            display: flex;
+            justify-content: space-between;
+            font-size: 6rem;
+            font-family: var(--heading-font), sans-serif;
+        }
+    }
+
+    .collapsed {
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        & .Ques::after {
+            content: "+";
+        }
+
+        & .Ans {
+            display: none;
+        }
+    }
+
+    .expanded {
+        & .Ques::after {
+            content: "-";
+        }
+
+        & .Ans {
+            display: block;
+            margin-top: 2rem;
+            padding-right: 10rem;
+        }
+    }
+}
+
+/* <!------------------- **** ' FAQ' **** -------------------!> */
+/* <=================== 'Footer' Section ===================> */
+
+footer {
+    top: 12rem;
+}
+
+/* <!------------------- **** 'Footer' **** -------------------!> */
+
+/* <=================== 'Responsive' Section ===================> */
+
+@media screen and (width <= 1000px) {
+
+    .section-form {
+        *{
+            --origin: center !important;
+        }
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        justify-content: center;
+        .left-text {
+            text-align: center;
+            h1 {
+                font-size: 8rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .section-QA .QA-div .Ques {
+        font-size: 4rem;
+    }
+
+}
+
+/* <!------------------- **** 'Responsive' **** -------------------!> */
