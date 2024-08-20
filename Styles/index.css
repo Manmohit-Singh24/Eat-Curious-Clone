@@ -284,7 +284,6 @@
         position: absolute;
         left: -25vw;
         background-color: var(--darkgreen);
-        /*z-index: 0;*/
         top: 0;
         border-radius: 150% 150% 0 0;
     }
@@ -297,6 +296,16 @@
             height: 100%;
             width: 100%;
         }
+    }
+    &::after {
+        content: " ";
+        display: block;
+        height: 300vh;
+        width: 100vw;
+        position: absolute;
+        top: 112vw ;
+        left: 0;
+        background: var(--darkgreen);
     }
 }
 
@@ -385,7 +394,7 @@
 .section-about .about-farms {
     background-color: var(--darkgreen);
     position: relative;
-
+    height: 100%;
     .image, .image img {
         width: 100%;
         border-radius: .7rem;
@@ -635,18 +644,6 @@
     .section-productsHome {
         background-color: var(--white);
         padding-top: 5rem !important;
-        &::after {
-            content: " ";
-            display: block;
-            padding-top: 5rem;
-            height: 100vh;
-            width: 100vw;
-            position: absolute;
-            top: 60%;
-            left: 0;
-            background: var(--darkgreen);
-            z-index: 0;
-        }
         .products {
             grid-template-columns: 1fr 1fr;
             * {
@@ -666,7 +663,6 @@
 }
 
 @media screen and (width <= 750px ) {
-
     .hero-section {
         height: auto;
 
@@ -699,10 +695,6 @@
                 }
             }
         }
-    }
-
-    .section-productsHome::after {
-        top: 50%;
     }
 }
 
