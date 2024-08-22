@@ -42,3 +42,9 @@ const secFooter = new OnLoadEffects("footer");
 secFooter.addBlinkEffect(".curved-text", "bottom", "0.3s");
 
 /*-----------------------------------------------------------------------------------------------------------*/
+/*=============================================='Q/A'===================================================*/
+let secQA= document.querySelector(".section-QA");
+for (const QAElement of secQA.children) {
+    addDropDown(QAElement);
+}
+/*-----------------------------------------------------------------------------------------------------------*/

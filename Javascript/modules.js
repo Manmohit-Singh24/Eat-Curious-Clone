@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const func of DOMLoadFunctions) func();
 })
 
-// Todo :  notes of how to detect scroll-direction and element load
-
 /*-----------------------------------------------------------------------------------------------------------*/
 
 
@@ -87,18 +85,6 @@ function onLoad() {
         if (rect.top <= height / 2 && rect.top >= -1 * height / 2) {
             // console.log(obj.section.classList , rect.top , height)
             obj.appearAll();
-
-            /*Tip : rather than checking each section again , once reached viewport, null it value
-                   * onLoadObjects[i] = null ;
-             *Bug : When a section has position sticky with bottom defined , it is preloading before it is visible on viewport
-                   * because once its previous section loads , it removed from `onLoadObjects` , and then even on a small scroll
-                   * the next section with bottom sticky is detected and loaded even before user is on its previous section .
-                   * same thing happens when scroll bottom to top and some section has position sticky to top
-             *Fix : detect section whose just next section has position sticky bottom , or previous has position sticky top, and not null that section .
-                   * Add a boolean property to `OnLoadEffects` constructor function who take value whether to null it or not.
-                   * consider adding sections whose before and after sections are in these cases , before those sections in 'onLoadObjects'.
-                   * i.e if previous section has sticky top , add this section after the section next to it with nullify as false .
-             */
             if (obj.toNullify) {
                 onLoadObjects[i] = null;
             }
@@ -112,11 +98,10 @@ function onLoad() {
 // SMALL NAVBAR : 
 let smNavBtn = document.querySelector(".small-navbar .nav-btn");
 let smNavDisplay = document.querySelector( ".nav-btn-clicked");
-smNavBtn.addEventListener("click", (e) => {
+smNavBtn.addEventListener("click", () => {
     smNavDisplay.classList.toggle("hide")
     smNavBtn.classList.toggle("clicked");
     for (const child of smNavDisplay.children) {
-        // child.classList.toggle("pop-hide");
         setTimeout(()=>{child.classList.toggle("pop-appear");} , 10)
         console.log(child);
         console.log(child.classList);
@@ -146,11 +131,10 @@ addDOMLoadCallback(userTyping);
 /*-----------------------------------------------------------------------------------------------------------*/
 
 /*=============================================='Q / A'===================================================*/
-let secQA= document.querySelector(".section-QA");
-for (const QAElement of secQA.children) {
-    QAElement.addEventListener("click", (e) => {
-        QAElement.classList.toggle("expanded");
-        QAElement.classList.toggle("collapsed");
+function addDropDown( element){
+    element.addEventListener("click", () => {
+        element.classList.toggle("expanded");
+        element.classList.toggle("collapsed");
     })
 }
 /*-----------------------------------------------------------------------------------------------------------*/

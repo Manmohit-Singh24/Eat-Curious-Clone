@@ -31,8 +31,6 @@ function headerEffects() {
 }
 addScrollCallback(headerEffects);
 
-
-
 /*-----------------------------------------------------------------------------------------------------------*/
 
 /*=============================================='Sticker Rotation'===================================================*/
@@ -51,22 +49,15 @@ addScrollCallback(rotateSticker);
 /*=============================================='Hero Section Pop Effect'===================================================*/
 
 const secHero = new OnLoadEffects(".hero-section");
-secHero.addPopEffect(" h1:first-child", "center", "0", "0.3s");
+secHero.addPopEffect(" .hero-heading-1", "center", "0", "0.3s");
 secHero.addPopEffect(" img", "center", "0.2s", "0.3s");
-secHero.addPopEffect(" h1:last-child", "center", "0.4s", "0.3s");
+secHero.addPopEffect(" .hero-heading-2", "center", "0.4s", "0.3s");
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
 /*=============================================='About sections Pop Effect'===================================================*/
 
 const secAbout = document.querySelectorAll(".section-about .container");
-    
-// for (const sectionAboutElement of secAbout) {
-//     let About = new OnLoadEffects(sectionAboutElement, false);
-//     About.addPopEffect(sectionAboutElement.children[i], "left");
-//     About.addPopEffect(sectionAboutElement.lastElementChild, "right");
-//     sectionAboutElement.querySelector(".image").style.setProperty("--delay", `0.3s`);
-// }
 
 for (let i = 0; i < secAbout.length; i++) {
     let About = new OnLoadEffects(secAbout[i], false);
