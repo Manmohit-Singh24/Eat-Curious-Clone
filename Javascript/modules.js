@@ -22,10 +22,13 @@ function addDOMLoadCallback(callbackFunction){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("body").style.opacity = "0";
     document.fonts.ready.then(function () {
-    setTimeout(onLoad, 500); // 500 ms so that hide class is added to components on screen viewport
-    for (const func of DOMLoadFunctions) func();
-})
+        document.querySelector("body").style.opacity = "1";
+        setTimeout(onLoad, 500); // 500 ms so that hide class is added to components on screen viewport
+        for (const func of DOMLoadFunctions) func();
+    })
+});
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
