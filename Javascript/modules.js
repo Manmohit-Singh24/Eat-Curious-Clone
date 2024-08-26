@@ -22,7 +22,8 @@ function addDOMLoadCallback(callbackFunction){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(onLoad, 1000); // 300 ms so that hide class is added to components on screen viewport
+    document.fonts.ready.then(function () {
+    setTimeout(onLoad, 500); // 500 ms so that hide class is added to components on screen viewport
     for (const func of DOMLoadFunctions) func();
 })
 
