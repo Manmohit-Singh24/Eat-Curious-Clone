@@ -22,7 +22,7 @@ function addDOMLoadCallback(callbackFunction){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(onLoad, 300); // 300 ms so that hide class is added to components on screen viewport
+    setTimeout(onLoad, 1000); // 300 ms so that hide class is added to components on screen viewport
     for (const func of DOMLoadFunctions) func();
 })
 
